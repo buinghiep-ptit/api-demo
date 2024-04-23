@@ -29,7 +29,7 @@ const db = {
 
 // [GET] /
 app.get("/", (req, res) => {
-  res.render("pages/index");
+  res.send("Hello World");
 });
 
 // [GET] /api/posts
