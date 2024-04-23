@@ -70,18 +70,14 @@ app.get("/api/auth/me", (req, res) => {
   res.json(user);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
-// https
-//   .createServer(
-//     {
-//       key: fs.readFileSync("testcookie.com+2-key.pem"),
-//       cert: fs.readFileSync("testcookie.com+2.pem"),
-//     },
-//     app
-//   )
-//   .listen(port, () => {
-//     console.log(`Server is running on https://localhost:${port}`);
-//   });
+https
+  .createServer(
+    {
+      key: fs.readFileSync("testcookie.com+2-key.pem"),
+      cert: fs.readFileSync("testcookie.com+2.pem"),
+    },
+    app
+  )
+  .listen(port, () => {
+    console.log(`Server is running on https://localhost:${port}`);
+  });
